@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trịnh Ngọc Đức | Executive Pastry Chef Portfolio</title>
+  <meta name="description" content="Portfolio of Executive Pastry Chef Trịnh Ngọc Đức - Le Méridien Saigon (Marriott International).">
+
+  <!-- Typography: Luxury Editorial Pairing -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              gold: '#D4AF37',
+              goldLight: '#F3E5AB',
+              goldDark: '#AA820A',
+              dark: '#0B0D11',
+              card: '#131720',
+              cardBorder: '#232938',
+              muted: '#94A3B8'
+            }
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', '"Noto Serif TC"', 'Georgia', 'serif'],
+            cinzel: ['"Cinzel"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    ::selection {
+      background-color: #D4AF37;
+      color: #0B0D11;
+    }
+    .glass-nav {
+      background: rgba(11, 13, 17, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+    }
+    .glass-card {
+      background: rgba(19, 23, 32, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(212, 175, 55, 0.12);
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .glass-card:hover {
+      border-color: rgba(212, 175, 55, 0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.5), 0 0 20px -4px rgba(212, 175, 55, 0.15);
+    }
+    .text-gradient-gold {
+      background: linear-gradient(135deg, #FFF1C5 0%, #D4AF37 50%, #A27907 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gold-glow {
+      box-shadow: 0 0 40px -10px rgba(212, 175, 55, 0.3);
+    }
+    .lang-btn.active {
+      background-color: #D4AF37;
+      color: #0B0D11;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body class="bg-brand-dark text-slate-300 font-sans antialiased min-h-screen">
+
+  <!-- Header / Navigation Bar -->
+  <header class="fixed top-0 left-0 right-0 z-50 glass-nav">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#hero" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-full border border-brand-gold/40 flex items-center justify-center text-brand-gold font-cinzel font-bold text-base group-hover:scale-105 group-hover:border-brand-gold transition-all">
+          Đ
+        </div>
+        <div>
+          <span class="font-cinzel text-base tracking-widest text-white font-bold block">TRỊNH NGỌC ĐỨC</span>
+          <span class="text-[10px] uppercase tracking-widest text-brand-gold font-medium" data-i18n="nav_role">Pastry Chef • Le Méridien Saigon</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav & Language Switcher -->
+      <div class="hidden md:flex items-center gap-8 text-xs uppercase tracking-widest font-semibold text-slate-400">
+        <nav class="flex items-center gap-7">
+          <a href="#gallery" class="hover:text-brand-gold transition-colors" data-i18n="nav_works">Tác phẩm</a>
+          <a href="#experience" class="hover:text-brand-gold transition-colors" data-i18n="nav_experience">Kinh nghiệm</a>
+          <a href="#skills" class="hover:text-brand-gold transition-colors" data-i18n="nav_skills">Kỹ năng</a>
+          <a href="#education" class="hover:text-brand-gold transition-colors" data-i18n="nav_education">Học vấn</a>
+          <a href="#contact" class="hover:text-brand-gold transition-colors" data-i18n="nav_contact">Liên hệ</a>
+        </nav>
+
+        <!-- Language Switcher Pill -->
+        <div class="flex items-center bg-brand-card border border-brand-cardBorder rounded-full p-1 text-[11px] gap-1">
+          <button onclick="setLanguage('vi')" id="btn-vi" class="lang-btn px-2.5 py-1 rounded-full transition-all active">VI</button>
+          <button onclick="setLanguage('en')" id="btn-en" class="lang-btn px-2.5 py-1 rounded-full transition-all text-slate-400 hover:text-white">EN</button>
+          <button onclick="setLanguage('zh')" id="btn-zh" class="lang-btn px-2.5 py-1 rounded-full transition-all text-slate-400 hover:text-white">繁中</button>
+        </div>
+
+        <a href="#contact-form-section" class="px-5 py-2.5 rounded-full border border-brand-gold/60 text-brand-gold hover:bg-brand-gold hover:text-brand-dark hover:border-brand-gold transition-all duration-300" data-i18n="nav_get_in_touch">
+          Gửi Tin Nhắn
+        </a>
+      </div>
+
+      <!-- Mobile Controls (Lang + Menu) -->
+      <div class="flex md:hidden items-center gap-3">
+        <div class="flex items-center bg-brand-card border border-brand-cardBorder rounded-full p-0.5 text-[10px] gap-0.5">
+          <button onclick="setLanguage('vi')" id="m-btn-vi" class="lang-btn px-2 py-0.5 rounded-full active">VI</button>
+          <button onclick="setLanguage('en')" id="m-btn-en" class="lang-btn px-2 py-0.5 rounded-full text-slate-400">EN</button>
+          <button onclick="setLanguage('zh')" id="m-btn-zh" class="lang-btn px-2 py-0.5 rounded-full text-slate-400">繁中</button>
+        </div>
+        <button id="menu-btn" class="text-slate-300 hover:text-white" aria-label="Toggle Navigation">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-brand-cardBorder bg-brand-dark/95 px-6 py-5 space-y-4 text-xs uppercase tracking-widest">
+      <a href="#gallery" class="block py-1 text-slate-300 hover:text-brand-gold" data-i18n="nav_works">Tác phẩm</a>
+      <a href="#experience" class="block py-1 text-slate-300 hover:text-brand-gold" data-i18n="nav_experience">Kinh nghiệm</a>
+      <a href="#skills" class="block py-1 text-slate-300 hover:text-brand-gold" data-i18n="nav_skills">Kỹ năng</a>
+      <a href="#education" class="block py-1 text-slate-300 hover:text-brand-gold" data-i18n="nav_education">Học vấn</a>
+      <a href="#contact" class="block py-1 text-slate-300 hover:text-brand-gold" data-i18n="nav_contact">Liên hệ</a>
+      <a href="#contact-form-section" class="block py-2 text-brand-gold font-bold" data-i18n="nav_get_in_touch">Gửi Tin Nhắn</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="pt-32 pb-20 md:pt-44 md:pb-32 relative overflow-hidden">
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-brand-gold/10 rounded-full blur-[130px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        
+        <!-- Hero Information -->
+        <div class="lg:col-span-7 space-y-7">
+          <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-brand-gold/10 border border-brand-gold/30 text-xs font-semibold uppercase tracking-wider text-brand-gold">
+            <span class="w-2 h-2 rounded-full bg-brand-gold animate-pulse"></span>
+            <span data-i18n="hero_badge">Pastry Chef • Marriott International</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-serif text-white font-bold leading-[1.15]" data-i18n="hero_title">
+            Nghệ Thuật Bếp Bánh &amp; <br>
+            <span class="text-gradient-gold">Đẳng Cấp Ẩm Thực 5 Sao</span>
+          </h1>
+
+          <p class="text-slate-300 text-base md:text-lg leading-relaxed max-w-2xl font-light" data-i18n="hero_bio">
+            Chào mừng bạn đến với portfolio của <strong>Trịnh Ngọc Đức</strong> — Bếp trưởng Bếp bánh (Pastry Chef) tại <em>Le Méridien Saigon Hotel</em>. Hơn 11 năm kinh nghiệm quản lý bộ phận bánh, phát triển thực đơn haute couture và vận hành tiệc quốc tế tại các khách sạn danh tiếng hàng đầu như <strong>Marriott International</strong> và <strong>AccorHotels (MGallery)</strong>.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a href="#gallery" class="px-7 py-3.5 rounded-full bg-gradient-to-r from-brand-gold via-brand-gold to-brand-goldDark text-brand-dark font-bold text-xs uppercase tracking-wider hover:brightness-110 transition-all flex items-center gap-2 shadow-lg shadow-brand-gold/20">
+              <i data-lucide="eye" class="w-4 h-4"></i> <span data-i18n="hero_btn_works">Xem Tác Phẩm Bánh</span>
+            </a>
+            <a href="#contact-form-section" class="px-7 py-3.5 rounded-full border border-slate-700 hover:border-brand-gold text-slate-300 hover:text-brand-gold transition-colors text-xs uppercase tracking-wider font-semibold flex items-center gap-2">
+              <i data-lucide="send" class="w-4 h-4"></i> <span data-i18n="hero_btn_contact">Gửi Tin Nhắn Cho Tôi</span>
+            </a>
+          </div>
+
+          <!-- Quick Metrics -->
+          <div class="grid grid-cols-3 gap-6 pt-8 border-t border-brand-cardBorder max-w-xl">
+            <div>
+              <div class="text-3xl md:text-4xl font-serif font-bold text-white">11+</div>
+              <div class="text-xs text-brand-muted mt-1 uppercase tracking-wider" data-i18n="stat_exp">Năm kinh nghiệm</div>
+            </div>
+            <div>
+              <div class="text-3xl md:text-4xl font-serif font-bold text-brand-gold">5★</div>
+              <div class="text-xs text-brand-muted mt-1 uppercase tracking-wider" data-i18n="stat_hotel">Khách Sạn Q.Tế</div>
+            </div>
+            <div>
+              <div class="text-3xl md:text-4xl font-serif font-bold text-white">705</div>
+              <div class="text-xs text-brand-muted mt-1 uppercase tracking-wider" data-i18n="stat_lang">TOEIC &amp; Tiếng Pháp</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Portrait Image -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="relative group">
+            <div class="absolute -inset-1.5 rounded-3xl bg-gradient-to-tr from-brand-gold via-brand-goldDark to-brand-gold/10 opacity-60 blur-lg group-hover:opacity-90 transition-opacity"></div>
+            
+            <div class="relative w-72 sm:w-80 md:w-88 h-[420px] md:h-[480px] rounded-2xl overflow-hidden border-2 border-brand-gold/40 bg-brand-card gold-glow">
+              <img 
+                src="assets/images/avatar.jpeg" 
+                alt="Pastry Chef Trịnh Ngọc Đức" 
+                class="w-full h-full object-cover object-top transition duration-700 group-hover:scale-105"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/20 to-transparent"></div>
+              
+              <div class="absolute bottom-5 left-5 right-5 p-4 rounded-xl glass-nav text-center">
+                <p class="font-cinzel font-bold text-white text-base tracking-wider">TRỊNH NGỌC ĐỨC</p>
+                <p class="text-xs text-brand-gold uppercase tracking-widest mt-0.5">Pastry Chef</p>
+                <p class="text-[11px] text-slate-400 mt-1">Le Méridien Saigon Hotel • Marriott</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Showcase / Portfolio Gallery -->
+  <section id="gallery" class="py-24 bg-brand-card/30 border-y border-brand-cardBorder">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div class="space-y-3">
+          <span class="text-xs uppercase tracking-widest text-brand-gold font-semibold" data-i18n="gallery_subtitle">Tác phẩm tiêu biểu</span>
+          <h2 class="text-3xl md:text-4xl font-serif text-white font-bold" data-i18n="gallery_title">Nghệ Thuật Bánh &amp; Ẩm Thực</h2>
+          <div class="w-16 h-0.5 bg-brand-gold"></div>
+        </div>
+        <p class="text-slate-400 text-sm max-w-md" data-i18n="gallery_desc">
+          Sự giao thoa hoàn hảo giữa kỹ nghệ cổ điển Pháp, cảm hứng Đông Dương và tư duy thẩm mỹ ẩm thực hiện đại 5 sao.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Artwork 1 -->
+        <div class="glass-card rounded-2xl overflow-hidden group cursor-pointer" onclick="showGalleryModal(0)">
+          <div class="relative h-64 overflow-hidden">
+            <img src="assets/images/pastry-signature-1.jpg" alt="Haute Couture Entremets" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent opacity-60"></div>
+            <div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-brand-dark/80 text-[10px] uppercase tracking-wider text-brand-gold border border-brand-gold/30">
+              Modern French
+            </div>
+          </div>
+          <div class="p-5 space-y-2">
+            <h3 class="text-lg font-serif font-bold text-white group-hover:text-brand-gold transition-colors" data-i18n="art1_title">Haute Couture Entremets</h3>
+            <p class="text-xs text-slate-400 line-clamp-2" data-i18n="art1_short">Bánh kem tầng tráng gương hiện đại, kỹ thuật xử lý sô-cô-la thủ công chuẩn mực.</p>
+            <div class="pt-2 flex items-center gap-1.5 text-xs text-brand-gold font-medium">
+              <span data-i18n="gallery_view_detail">Xem chi tiết</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Artwork 2 -->
+        <div class="glass-card rounded-2xl overflow-hidden group cursor-pointer" onclick="showGalleryModal(1)">
+          <div class="relative h-64 overflow-hidden">
+            <img src="assets/images/pastry-signature-2.jpg" alt="Artisan Bakery" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent opacity-60"></div>
+            <div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-brand-dark/80 text-[10px] uppercase tracking-wider text-brand-gold border border-brand-gold/30">
+              Handcrafted
+            </div>
+          </div>
+          <div class="p-5 space-y-2">
+            <h3 class="text-lg font-serif font-bold text-white group-hover:text-brand-gold transition-colors" data-i18n="art2_title">Artisan Sourdough &amp; Breads</h3>
+            <p class="text-xs text-slate-400 line-clamp-2" data-i18n="art2_short">Nghệ thuật làm bánh mì men tự nhiên, bánh mì lúa mạch châu Âu truyền thống.</p>
+            <div class="pt-2 flex items-center gap-1.5 text-xs text-brand-gold font-medium">
+              <span data-i18n="gallery_view_detail">Xem chi tiết</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Artwork 3 -->
+        <div class="glass-card rounded-2xl overflow-hidden group cursor-pointer" onclick="showGalleryModal(2)">
+          <div class="relative h-64 overflow-hidden">
+            <img src="assets/images/pastry-signature-3.jpg" alt="Afternoon Tea" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent opacity-60"></div>
+            <div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-brand-dark/80 text-[10px] uppercase tracking-wider text-brand-gold border border-brand-gold/30">
+              Luxury High Tea
+            </div>
+          </div>
+          <div class="p-5 space-y-2">
+            <h3 class="text-lg font-serif font-bold text-white group-hover:text-brand-gold transition-colors" data-i18n="art3_title">Afternoon Tea Collection</h3>
+            <p class="text-xs text-slate-400 line-clamp-2" data-i18n="art3_short">Bộ sưu tập Petit Fours và Tarts tráng miệng cao cấp phục vụ tiệc trà chiều 5 sao.</p>
+            <div class="pt-2 flex items-center gap-1.5 text-xs text-brand-gold font-medium">
+              <span data-i18n="gallery_view_detail">Xem chi tiết</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Artwork 4 -->
+        <div class="glass-card rounded-2xl overflow-hidden group cursor-pointer" onclick="showGalleryModal(3)">
+          <div class="relative h-64 overflow-hidden">
+            <img src="assets/images/pastry-signature-4.jpg" alt="Viennoiserie Mastery" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent opacity-60"></div>
+            <div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-brand-dark/80 text-[10px] uppercase tracking-wider text-brand-gold border border-brand-gold/30">
+              French Lamination
+            </div>
+          </div>
+          <div class="p-5 space-y-2">
+            <h3 class="text-lg font-serif font-bold text-white group-hover:text-brand-gold transition-colors" data-i18n="art4_title">French Viennoiserie</h3>
+            <p class="text-xs text-slate-400 line-clamp-2" data-i18n="art4_short">Croissant và bánh nướng ngàn lớp thơm lừng, xốp giòn chuẩn hương vị Paris.</p>
+            <div class="pt-2 flex items-center gap-1.5 text-xs text-brand-gold font-medium">
+              <span data-i18n="gallery_view_detail">Xem chi tiết</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Career Experience Timeline -->
+  <section id="experience" class="py-24">
+    <div class="max-w-4xl mx-auto px-6">
+      
+      <div class="text-center max-w-2xl mx-auto mb-20 space-y-3">
+        <span class="text-xs uppercase tracking-widest text-brand-gold font-semibold" data-i18n="exp_subtitle">11 Năm Khẳng Định Năng Lực</span>
+        <h2 class="text-3xl md:text-4xl font-serif text-white font-bold" data-i18n="exp_title">Hành Trình Sự Nghiệp</h2>
+        <div class="w-16 h-0.5 bg-brand-gold mx-auto"></div>
+      </div>
+
+      <div class="relative border-l-2 border-brand-gold/30 ml-4 sm:ml-8 md:ml-36 space-y-12">
+        
+        <!-- Experience 1: Current Pastry Chef -->
+        <div class="relative pl-8 md:pl-10 group">
+          <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-brand-gold border-4 border-brand-dark shadow-md shadow-brand-gold/50"></div>
+          <span class="hidden md:block absolute -left-40 top-1 text-xs font-bold uppercase tracking-wider text-brand-gold" data-i18n="exp1_date_desktop">08/2023 – Nay</span>
+          
+          <div class="glass-card p-6 md:p-8 rounded-2xl border-brand-gold/50 group-hover:border-brand-gold">
+            <span class="md:hidden inline-block text-xs font-bold text-brand-gold mb-2" data-i18n="exp1_date_mobile">08/2023 – Hiện tại</span>
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+              <h3 class="text-2xl font-serif font-bold text-white">Pastry Chef</h3>
+              <span class="text-xs px-3 py-1 rounded-full bg-brand-gold/20 text-brand-gold font-semibold" data-i18n="exp1_badge">Vị trí hiện tại</span>
+            </div>
+            <p class="text-brand-gold font-medium text-sm mb-4">Le Méridien Saigon Hotel • Marriott International</p>
+            <p class="text-sm text-slate-300 leading-relaxed mb-4" data-i18n="exp1_desc">
+              Lãnh đạo và quản lý toàn diện bộ phận Bếp bánh (Pastry &amp; Bakery section). Định hướng phong cách tráng miệng sang trọng, xây dựng menu cho nhà hàng fine-dining, tiệc hội nghị quốc tế và chuỗi sự kiện VIP.
+            </p>
+            <div class="flex flex-wrap gap-2 text-xs">
+              <span class="px-2.5 py-1 rounded-md bg-brand-cardBorder text-slate-300" data-i18n="tag_exec">Vận hành Bếp trưởng</span>
+              <span class="px-2.5 py-1 rounded-md bg-brand-cardBorder text-slate-300" data-i18n="tag_menu">Menu Development</span>
+              <span class="px-2.5 py-1 rounded-md bg-brand-cardBorder text-slate-300" data-i18n="tag_cost">Cost Control</span>
+              <span class="px-2.5 py-1 rounded-md bg-brand-cardBorder text-slate-300" data-i18n="tag_haccp">HACCP &amp; Food Safety</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience 2: Pastry Sous Chef -->
+        <div class="relative pl-8 md:pl-10 group">
+          <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-600 border-4 border-brand-dark group-hover:bg-brand-gold transition-colors"></div>
+          <span class="hidden md:block absolute -left-40 top-1 text-xs font-semibold uppercase tracking-wider text-slate-400">03/2019 – 07/2023</span>
+          
+          <div class="glass-card p-6 md:p-8 rounded-2xl group-hover:border-brand-gold/40">
+            <span class="md:hidden inline-block text-xs font-semibold text-slate-400 mb-2">03/2019 – 07/2023 (4y 4m)</span>
+            <h3 class="text-xl font-serif font-bold text-white mb-1">Pastry Sous Chef</h3>
+            <p class="text-brand-gold font-medium text-sm mb-3">Le Méridien Saigon Hotel • Marriott International</p>
+            <p class="text-sm text-slate-300 leading-relaxed" data-i18n="exp2_desc">
+              Trực tiếp điều hành toàn bộ bộ phận bếp bánh tương đương vai trò Pastry Chef (<em>in charge of full pastry section as a Pastry Chef</em>). Đảm bảo chất lượng xuất sắc và kiểm soát hao hụt chi phí thực phẩm.
+            </p>
+          </div>
+        </div>
+
+        <!-- Experience 3: Chef De Partie -->
+        <div class="relative pl-8 md:pl-10 group">
+          <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-600 border-4 border-brand-dark group-hover:bg-brand-gold transition-colors"></div>
+          <span class="hidden md:block absolute -left-40 top-1 text-xs font-semibold uppercase tracking-wider text-slate-400">04/2018 – 03/2019</span>
+          
+          <div class="glass-card p-6 md:p-8 rounded-2xl group-hover:border-brand-gold/40">
+            <span class="md:hidden inline-block text-xs font-semibold text-slate-400 mb-2">04/2018 – 03/2019 (1y)</span>
+            <h3 class="text-xl font-serif font-bold text-white mb-1">Chef De Partie Pastry</h3>
+            <p class="text-brand-gold font-medium text-sm mb-3">Hôtel Des Arts Saigon, MGallery • AccorHotels</p>
+            <p class="text-sm text-slate-300 leading-relaxed" data-i18n="exp3_desc">
+              Trực tiếp phụ trách trạm bánh boutique sang trọng, sáng tạo các món bánh mang dấu ấn phong cách Pháp cổ điển kết hợp hơi thở Đông Dương đương đại.
+            </p>
+          </div>
+        </div>
+
+        <!-- Experience 4: Demi Chef Pastry -->
+        <div class="relative pl-8 md:pl-10 group">
+          <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-600 border-4 border-brand-dark group-hover:bg-brand-gold transition-colors"></div>
+          <span class="hidden md:block absolute -left-40 top-1 text-xs font-semibold uppercase tracking-wider text-slate-400">02/2017 – 04/2018</span>
+          
+          <div class="glass-card p-6 md:p-8 rounded-2xl group-hover:border-brand-gold/40">
+            <span class="md:hidden inline-block text-xs font-semibold text-slate-400 mb-2">02/2017 – 04/2018 (1y 2m)</span>
+            <h3 class="text-lg font-serif font-bold text-white mb-1">Demi Chef Pastry</h3>
+            <p class="text-brand-gold font-medium text-sm mb-3">Hôtel Des Arts Saigon, MGallery • AccorHotels</p>
+            <p class="text-sm text-slate-400" data-i18n="exp4_desc">
+              Phụ trách chất lượng mẻ bánh phục vụ tiệc trà chiều cao cấp (Afternoon Tea), buffet sáng và các sự kiện sang trọng của thương hiệu MGallery.
+            </p>
+          </div>
+        </div>
+
+        <!-- Experience 5: Foundations -->
+        <div class="relative pl-8 md:pl-10 group">
+          <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-600 border-4 border-brand-dark group-hover:bg-brand-gold transition-colors"></div>
+          <span class="hidden md:block absolute -left-40 top-1 text-xs font-semibold uppercase tracking-wider text-slate-400">2013 – 2017</span>
+          
+          <div class="glass-card p-6 md:p-8 rounded-2xl group-hover:border-brand-gold/40">
+            <span class="md:hidden inline-block text-xs font-semibold text-slate-400 mb-2" data-i18n="exp5_period">Giai đoạn khởi đầu (2013 – 2017)</span>
+            <h3 class="text-lg font-serif font-bold text-white mb-2" data-i18n="exp5_title">Nền Móng Nghề Nghiệp &amp; Khởi Nghiệp Bếp Bánh</h3>
+            <ul class="space-y-2 text-sm text-slate-400">
+              <li><strong class="text-slate-300">09/2015 – 01/2017:</strong> Pastry Commis @ Hôtel Des Arts Saigon, MGallery (Accor)</li>
+              <li><strong class="text-slate-300">03/2014 – 08/2015:</strong> Pastry Commis @ Grand Silverland Hotel</li>
+              <li><strong class="text-slate-300">06/2013 – 08/2013:</strong> Waiter @ First Hotel (<span data-i18n="exp5_waiter">Nơi bắt đầu lòng thấu hiểu dịch vụ khách hàng từ trái tim</span>)</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Skills Grid -->
+  <section id="skills" class="py-24 bg-brand-card/30 border-y border-brand-cardBorder">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="text-center max-w-2xl mx-auto mb-20 space-y-3">
+        <span class="text-xs uppercase tracking-widest text-brand-gold font-semibold" data-i18n="skills_subtitle">Chuyên môn &amp; Thế mạnh</span>
+        <h2 class="text-3xl md:text-4xl font-serif text-white font-bold" data-i18n="skills_title">Kỹ Năng Toàn Diện</h2>
+        <div class="w-16 h-0.5 bg-brand-gold mx-auto"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Skill 1 -->
+        <div class="glass-card p-8 rounded-2xl space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold">
+            <i data-lucide="cake" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-serif font-bold text-white" data-i18n="sk1_title">Pastry &amp; Bakery Art</h3>
+          <p class="text-sm text-slate-400 leading-relaxed" data-i18n="sk1_desc">
+            Chuyên gia chế tác bánh Âu và Pháp đương đại: Entremets tráng gương, Chocolate Showpiece, Tart nghệ thuật, Viennoiserie cán ngàn lớp và bánh mì artisan men tự nhiên.
+          </p>
+        </div>
+
+        <!-- Skill 2 -->
+        <div class="glass-card p-8 rounded-2xl space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold">
+            <i data-lucide="utensils" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-serif font-bold text-white" data-i18n="sk2_title">Menu Concept Development</h3>
+          <p class="text-sm text-slate-400 leading-relaxed" data-i18n="sk2_desc">
+            Nghiên cứu thị trường và sáng tạo thực đơn tráng miệng theo mùa, tiệc trà chiều thượng hạng (Afternoon Tea), buffet món ngọt và sự kiện khánh tiết cao cấp.
+          </p>
+        </div>
+
+        <!-- Skill 3 -->
+        <div class="glass-card p-8 rounded-2xl space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold">
+            <i data-lucide="line-chart" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-serif font-bold text-white" data-i18n="sk3_title">Cost Control &amp; Food Waste</h3>
+          <p class="text-sm text-slate-400 leading-relaxed" data-i18n="sk3_desc">
+            Kỹ năng phân tích chi phí món ăn chính xác (Food Costing), quản lý nguyên liệu tồn kho theo nguyên tắc FIFO, giảm thiểu tối đa hao hụt và nâng cao biên lợi nhuận F&amp;B.
+          </p>
+        </div>
+
+        <!-- Skill 4 -->
+        <div class="glass-card p-8 rounded-2xl space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold">
+            <i data-lucide="shield-check" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-serif font-bold text-white" data-i18n="sk4_title">Tiêu Chuẩn 5 Sao &amp; HACCP</h3>
+          <p class="text-sm text-slate-400 leading-relaxed" data-i18n="sk4_desc">
+            Tuân thủ nghiêm ngặt các quy chuẩn vệ sinh an toàn thực phẩm quốc tế, kiểm soát nhiệt độ lưu trữ và quy trình bảo quản bánh tươi mỗi ngày.
+          </p>
+        </div>
+
+        <!-- Skill 5 -->
+        <div class="glass-card p-8 rounded-2xl space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold">
+            <i data-lucide="globe-2" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-serif font-bold text-white" data-i18n="sk5_title">Ngoại Ngữ Quốc Tế</h3>
+          <p class="text-sm text-slate-400 leading-relaxed" data-i18n="sk5_desc">
+            <strong>Tiếng Anh:</strong> TOEIC 705 (Làm việc và giao tiếp trôi chảy với chuyên gia quốc tế). Hiểu biết thuật ngữ và giao tiếp tiếng Pháp chuyên ngành bánh ngọt.
+          </p>
+        </div>
+
+        <!-- Skill 6 -->
+        <div class="glass-card p-8 rounded-2xl space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold">
+            <i data-lucide="users" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-serif font-bold text-white" data-i18n="sk6_title">Lãnh Đạo Đội Ngũ &amp; Đào Tạo</h3>
+          <p class="text-sm text-slate-400 leading-relaxed" data-i18n="sk6_desc">
+            Khả năng dẫn dắt, truyền cảm hứng và đào tạo các thế hệ phụ bếp, đầu bếp bánh trẻ. Làm việc bình tĩnh và đạt hiệu suất cao dưới áp lực thời gian lớn.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Education & Credentials Section -->
+  <section id="education" class="py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="max-w-3xl mx-auto space-y-8">
+        
+        <div class="text-center space-y-3">
+          <span class="text-xs uppercase tracking-widest text-brand-gold font-semibold" data-i18n="edu_subtitle">Bằng cấp &amp; Nền tảng</span>
+          <h2 class="text-3xl font-serif text-white font-bold" data-i18n="edu_title">Học Vấn &amp; Nền Tảng Học Thuật</h2>
+          <div class="w-16 h-0.5 bg-brand-gold mx-auto"></div>
+        </div>
+
+        <!-- Academic Card -->
+        <div class="glass-card p-8 md:p-10 rounded-2xl space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+            <div>
+              <span class="text-xs font-semibold uppercase text-brand-gold" data-i18n="edu_degree_type">Cử Nhân</span>
+              <h3 class="text-2xl font-serif font-bold text-white mt-1" data-i18n="edu_major">Quản Trị Khách Sạn (Hotel Management)</h3>
+              <p class="text-slate-400 text-sm mt-0.5">Đại Học Hoa Sen (Hoa Sen University)</p>
+            </div>
+            <span class="px-4 py-2 rounded-xl bg-brand-gold/15 text-brand-gold text-sm font-bold border border-brand-gold/30 shrink-0 self-start">
+              GPA: 3.22 / 4.0
+            </span>
+          </div>
+
+          <p class="text-sm text-slate-300 leading-relaxed" data-i18n="edu_desc">
+            Trang bị tư duy quản lý hiện đại kết hợp kiến thức vận hành khách sạn đa quốc gia, giúp kết nối trơn tru giữa nghệ thuật làm bánh và bài toán kinh doanh F&amp;B hiệu quả.
+          </p>
+
+          <div class="pt-5 border-t border-brand-cardBorder flex flex-wrap items-center justify-between gap-4 text-xs">
+            <span class="text-slate-400" data-i18n="edu_lang_cert">Chứng chỉ ngoại ngữ chuyên môn:</span>
+            <span class="text-brand-gold font-bold flex items-center gap-1.5 text-sm">
+              <i data-lucide="award" class="w-4 h-4"></i> TOEIC 705 Điểm
+            </span>
+          </div>
+        </div>
+
+        <!-- Interests -->
+        <div class="glass-card p-6 md:p-8 rounded-2xl space-y-4">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-brand-gold flex items-center gap-2">
+            <i data-lucide="heart" class="w-4 h-4"></i> <span data-i18n="interests_title">Sở Thích &amp; Nguồn Cảm Hứng</span>
+          </h4>
+          <div class="flex flex-wrap gap-2.5 text-xs">
+            <span class="px-3.5 py-1.5 rounded-full bg-brand-card border border-brand-cardBorder text-slate-300" data-i18n="int1">Nghệ thuật ẩm thực đỉnh cao</span>
+            <span class="px-3.5 py-1.5 rounded-full bg-brand-card border border-brand-cardBorder text-slate-300" data-i18n="int2">Sáng tạo bánh ngọt đương đại</span>
+            <span class="px-3.5 py-1.5 rounded-full bg-brand-card border border-brand-cardBorder text-slate-300" data-i18n="int3">Âm nhạc nghệ thuật</span>
+            <span class="px-3.5 py-1.5 rounded-full bg-brand-card border border-brand-cardBorder text-slate-300" data-i18n="int4">Du lịch trải nghiệm</span>
+            <span class="px-3.5 py-1.5 rounded-full bg-brand-card border border-brand-cardBorder text-slate-300" data-i18n="int5">Tâm lý học hành vi thực khách</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Contact Section & Functional Form -->
+  <section id="contact" class="py-24 bg-brand-card/30 border-t border-brand-cardBorder">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        
+        <!-- Contact Information Side -->
+        <div class="lg:col-span-5 space-y-8">
+          <div class="space-y-3">
+            <span class="text-xs uppercase tracking-widest text-brand-gold font-semibold" data-i18n="contact_subtitle">Liên hệ trực tiếp</span>
+            <h2 class="text-3xl font-serif text-white font-bold" data-i18n="contact_title">Thông Tin Liên Hệ</h2>
+            <div class="w-16 h-0.5 bg-brand-gold"></div>
+          </div>
+
+          <p class="text-sm text-slate-300 leading-relaxed" data-i18n="contact_intro">
+            Tôi luôn sẵn sàng kết nối, chia sẻ niềm đam mê ẩm thực và thảo luận về các cơ hội hợp tác làm việc, tư vấn mở tiệm bánh, phát triển menu hoặc các sự kiện ẩm thực cao cấp.
+          </p>
+
+          <div class="glass-card p-6 md:p-8 rounded-2xl space-y-6">
+            <ul class="space-y-5 text-sm">
+              <li class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold shrink-0">
+                  <i data-lucide="user" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <div class="text-xs text-slate-400" data-i18n="contact_name_lbl">Họ và tên</div>
+                  <div class="text-white font-serif font-bold text-lg">Trịnh Ngọc Đức</div>
+                  <div class="text-xs text-brand-gold" data-i18n="contact_dob">Sinh ngày: 13/10/1993</div>
+                </div>
+              </li>
+
+              <li class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold shrink-0">
+                  <i data-lucide="phone" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <div class="text-xs text-slate-400" data-i18n="contact_phone_lbl">Điện thoại / Zalo</div>
+                  <a href="tel:0769800935" class="text-white hover:text-brand-gold font-bold text-base transition-colors">0769 800 935</a>
+                </div>
+              </li>
+
+              <li class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold shrink-0">
+                  <i data-lucide="mail" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <div class="text-xs text-slate-400" data-i18n="contact_email_lbl">Email nhận thư</div>
+                  <a href="mailto:trinhngocduc1310@gmail.com" class="text-white hover:text-brand-gold font-bold text-base transition-colors">trinhngocduc1310@gmail.com</a>
+                </div>
+              </li>
+
+              <li class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold shrink-0">
+                  <i data-lucide="map-pin" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <div class="text-xs text-slate-400" data-i18n="contact_address_lbl">Địa chỉ</div>
+                  <div class="text-white font-medium" data-i18n="contact_address_val">235/64 Nam Kỳ Khởi Nghĩa, Phường Võ Thị Sáu (Xuân Hòa), Quận 3, TP. Hồ Chí Minh</div>
+                </div>
+              </li>
+            </ul>
+
+            <div class="pt-4 border-t border-brand-cardBorder flex items-center justify-between text-xs text-slate-400">
+              <span data-i18n="contact_ref_lbl">Người tham chiếu:</span>
+              <span class="text-brand-gold font-bold" data-i18n="contact_ref_val">Cung cấp khi có yêu cầu (On request)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Functional Email Form Side -->
+        <div id="contact-form-section" class="lg:col-span-7 space-y-6">
+          <div class="space-y-3">
+            <span class="text-xs uppercase tracking-widest text-brand-gold font-semibold" data-i18n="form_subtitle">Gửi tin nhắn trực tiếp</span>
+            <h2 class="text-3xl font-serif text-white font-bold" data-i18n="form_title">Gửi Email Cho Đức</h2>
+            <div class="w-16 h-0.5 bg-brand-gold"></div>
+          </div>
+
+          <!-- Formspree Endpoint targeting trinhngocduc1310@gmail.com -->
+          <form id="portfolio-form" action="https://formspree.io/f/mqaeekog" method="POST" class="glass-card p-8 md:p-10 rounded-2xl border-brand-gold/30 space-y-6">
+            
+            <!-- Hidden configuration for Formspree -->
+            <input type="hidden" name="_to" value="trinhngocduc1310@gmail.com">
+            <input type="hidden" name="_subject" value="New Contact Message from Pastry Chef Portfolio">
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <!-- Name -->
+              <div class="space-y-2">
+                <label for="sender-name" class="block text-xs uppercase tracking-wider text-slate-300 font-semibold" data-i18n="form_name_lbl">
+                  Họ và tên của bạn <span class="text-brand-gold">*</span>
+                </label>
+                <div class="relative">
+                  <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500">
+                    <i data-lucide="user" class="w-4 h-4"></i>
+                  </div>
+                  <input type="text" id="sender-name" name="name" required
+                    placeholder="Nguyễn Văn A" 
+                    class="w-full pl-10 pr-4 py-3 rounded-xl bg-brand-dark/90 border border-brand-cardBorder text-white placeholder-slate-600 focus:outline-none focus:border-brand-gold transition-colors text-sm">
+                </div>
+              </div>
+
+              <!-- Email -->
+              <div class="space-y-2">
+                <label for="sender-email" class="block text-xs uppercase tracking-wider text-slate-300 font-semibold" data-i18n="form_email_lbl">
+                  Email của bạn <span class="text-brand-gold">*</span>
+                </label>
+                <div class="relative">
+                  <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500">
+                    <i data-lucide="mail" class="w-4 h-4"></i>
+                  </div>
+                  <input type="email" id="sender-email" name="email" required
+                    placeholder="example@email.com" 
+                    class="w-full pl-10 pr-4 py-3 rounded-xl bg-brand-dark/90 border border-brand-cardBorder text-white placeholder-slate-600 focus:outline-none focus:border-brand-gold transition-colors text-sm">
+                </div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <!-- Phone -->
+              <div class="space-y-2">
+                <label for="sender-phone" class="block text-xs uppercase tracking-wider text-slate-300 font-semibold" data-i18n="form_phone_lbl">
+                  Số điện thoại
+                </label>
+                <div class="relative">
+                  <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500">
+                    <i data-lucide="phone" class="w-4 h-4"></i>
+                  </div>
+                  <input type="tel" id="sender-phone" name="phone"
+                    placeholder="0901 xxx xxx" 
+                    class="w-full pl-10 pr-4 py-3 rounded-xl bg-brand-dark/90 border border-brand-cardBorder text-white placeholder-slate-600 focus:outline-none focus:border-brand-gold transition-colors text-sm">
+                </div>
+              </div>
+
+              <!-- Subject / Purpose -->
+              <div class="space-y-2">
+                <label for="form-subject" class="block text-xs uppercase tracking-wider text-slate-300 font-semibold" data-i18n="form_purpose_lbl">
+                  Mục đích liên hệ <span class="text-brand-gold">*</span>
+                </label>
+                <div class="relative">
+                  <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500">
+                    <i data-lucide="briefcase" class="w-4 h-4"></i>
+                  </div>
+                  <select id="form-subject" name="purpose" required
+                    class="w-full pl-10 pr-4 py-3 rounded-xl bg-brand-dark/90 border border-brand-cardBorder text-white focus:outline-none focus:border-brand-gold transition-colors text-sm appearance-none">
+                    <option value="Cơ hội việc làm / Job Opportunity" data-i18n="opt_job">Cơ hội việc làm / Hợp tác dài hạn</option>
+                    <option value="Tư vấn mở tiệm bánh / Bakery Consulting" data-i18n="opt_consult">Tư vấn menu / Mở tiệm bánh</option>
+                    <option value="Đặt tiệc bánh / Private Event" data-i18n="opt_event">Đặt tiệc bánh sự kiện cao cấp</option>
+                    <option value="Giao lưu ẩm thực / Networking" data-i18n="opt_network">Giao lưu ẩm thực / Khác</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Message Body -->
+            <div class="space-y-2">
+              <label for="sender-message" class="block text-xs uppercase tracking-wider text-slate-300 font-semibold" data-i18n="form_msg_lbl">
+                Nội dung tin nhắn <span class="text-brand-gold">*</span>
+              </label>
+              <textarea id="sender-message" name="message" rows="5" required
+                placeholder="Xin chào Chef Đức, tôi muốn trao đổi về..." 
+                class="w-full p-4 rounded-xl bg-brand-dark/90 border border-brand-cardBorder text-white placeholder-slate-600 focus:outline-none focus:border-brand-gold transition-colors text-sm"></textarea>
+            </div>
+
+            <!-- Submit Button & Feedback Status -->
+            <div class="pt-2">
+              <button type="submit" id="submit-btn" class="w-full py-4 rounded-xl bg-gradient-to-r from-brand-gold via-brand-gold to-brand-goldDark hover:brightness-110 text-brand-dark font-bold text-xs uppercase tracking-widest transition-all flex items-center justify-center gap-2 shadow-lg shadow-brand-gold/20">
+                <i data-lucide="send" class="w-4 h-4"></i>
+                <span id="btn-text" data-i18n="form_submit_btn">Gửi Tin Nhắn Đến trinhngocduc1310@gmail.com</span>
+              </button>
+
+              <div id="form-status" class="hidden mt-4 p-4 rounded-xl text-center text-sm font-medium"></div>
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Modal for Artworks -->
+  <div id="image-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300" onclick="closeModal()">
+    <div class="relative max-w-3xl w-full glass-card p-6 rounded-2xl border-brand-gold/40" onclick="event.stopPropagation()">
+      <button onclick="closeModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-brand-dark border border-brand-cardBorder flex items-center justify-center text-slate-300 hover:text-white hover:border-brand-gold transition-colors" aria-label="Close modal">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+      <div class="rounded-xl overflow-hidden mb-4 max-h-[60vh]">
+        <img id="modal-img" src="" alt="Artwork Preview" class="w-full h-full object-cover">
+      </div>
+      <h3 id="modal-title" class="text-2xl font-serif font-bold text-white mb-2"></h3>
+      <p id="modal-desc" class="text-sm text-slate-300 leading-relaxed"></p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="py-12 border-t border-brand-cardBorder text-xs text-slate-500 bg-brand-dark">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        <p class="text-slate-400 font-medium">© 2026 Pastry Chef Trịnh Ngọc Đức. All rights reserved.</p>
+        <p class="text-[11px] text-slate-600 mt-1">Marriott International • Le Méridien Saigon Pastry Operations</p>
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="#hero" class="text-slate-400 hover:text-brand-gold transition-colors" data-i18n="footer_back_top">Về đầu trang</a>
+        <a href="mailto:trinhngocduc1310@gmail.com" class="text-brand-gold font-semibold">trinhngocduc1310@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Internationalization (i18n) & Interactive Logic -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Multilingual Translations Dictionary (VI, EN, ZH-TW)
+    const translations = {
+      vi: {
+        nav_role: "Pastry Chef • Le Méridien Saigon",
+        nav_works: "Tác phẩm",
+        nav_experience: "Kinh nghiệm",
+        nav_skills: "Kỹ năng",
+        nav_education: "Học vấn",
+        nav_contact: "Liên hệ",
+        nav_get_in_touch: "Gửi Tin Nhắn",
+        hero_badge: "Pastry Chef • Marriott International",
+        hero_title: 'Nghệ Thuật Bếp Bánh & <br><span class="text-gradient-gold">Đẳng Cấp Ẩm Thực 5 Sao</span>',
+        hero_bio: 'Chào mừng bạn đến với portfolio của <strong>Trịnh Ngọc Đức</strong> — Bếp trưởng Bếp bánh (Pastry Chef) tại <em>Le Méridien Saigon Hotel</em>. Hơn 11 năm kinh nghiệm quản lý bộ phận bánh, phát triển thực đơn haute couture và vận hành tiệc quốc tế tại các khách sạn danh tiếng hàng đầu như <strong>Marriott International</strong> và <strong>AccorHotels (MGallery)</strong>.',
+        hero_btn_works: "Xem Tác Phẩm Bánh",
+        hero_btn_contact: "Gửi Tin Nhắn Cho Tôi",
+        stat_exp: "Năm kinh nghiệm",
+        stat_hotel: "Khách Sạn Q.Tế",
+        stat_lang: "TOEIC & Tiếng Pháp",
+        gallery_subtitle: "Tác phẩm tiêu biểu",
+        gallery_title: "Nghệ Thuật Bánh & Ẩm Thực",
+        gallery_desc: "Sự giao thoa hoàn hảo giữa kỹ nghệ cổ điển Pháp, cảm hứng Đông Dương và tư duy thẩm mỹ ẩm thực hiện đại 5 sao.",
+        art1_title: "Haute Couture Entremets",
+        art1_short: "Bánh kem tầng tráng gương hiện đại, kỹ thuật xử lý sô-cô-la thủ công chuẩn mực.",
+        art2_title: "Artisan Sourdough & Breads",
+        art2_short: "Nghệ thuật làm bánh mì men tự nhiên, bánh mì lúa mạch châu Âu truyền thống.",
+        art3_title: "Afternoon Tea Collection",
+        art3_short: "Bộ sưu tập Petit Fours và Tarts tráng miệng cao cấp phục vụ tiệc trà chiều 5 sao.",
+        art4_title: "French Viennoiserie",
+        art4_short: "Croissant và bánh nướng ngàn lớp thơm lừng, xốp giòn chuẩn hương vị Paris.",
+        gallery_view_detail: "Xem chi tiết",
+        exp_subtitle: "11 Năm Khẳng Định Năng Lực",
+        exp_title: "Hành Trình Sự Nghiệp",
+        exp1_date_desktop: "08/2023 – Nay",
+        exp1_date_mobile: "08/2023 – Hiện tại",
+        exp1_badge: "Vị trí hiện tại",
+        exp1_desc: "Lãnh đạo và quản lý toàn diện bộ phận Bếp bánh (Pastry & Bakery section). Định hướng phong cách tráng miệng sang trọng, xây dựng menu cho nhà hàng fine-dining, tiệc hội nghị quốc tế và chuỗi sự kiện VIP.",
+        tag_exec: "Vận hành Bếp trưởng",
+        tag_menu: "Menu Development",
+        tag_cost: "Cost Control",
+        tag_haccp: "HACCP & Food Safety",
+        exp2_desc: "Trực tiếp điều hành toàn bộ bộ phận bếp bánh tương đương vai trò Pastry Chef (in charge of full pastry section as a Pastry Chef). Đảm bảo chất lượng xuất sắc và kiểm soát hao hụt chi phí thực phẩm.",
+        exp3_desc: "Trực tiếp phụ trách trạm bánh boutique sang trọng, sáng tạo các món bánh mang dấu ấn phong cách Pháp cổ điển kết hợp hơi thở Đông Dương đương đại.",
+        exp4_desc: "Phụ trách chất lượng mẻ bánh phục vụ tiệc trà chiều cao cấp (Afternoon Tea), buffet sáng và các sự kiện sang trọng của thương hiệu MGallery.",
+        exp5_period: "Giai đoạn khởi đầu (2013 – 2017)",
+        exp5_title: "Nền Móng Nghề Nghiệp & Khởi Nghiệp Bếp Bánh",
+        exp5_waiter: "Nơi bắt đầu lòng thấu hiểu dịch vụ khách hàng từ trái tim",
+        skills_subtitle: "Chuyên môn & Thế mạnh",
+        skills_title: "Kỹ Năng Toàn Diện",
+        sk1_title: "Pastry & Bakery Art",
+        sk1_desc: "Chuyên gia chế tác bánh Âu và Pháp đương đại: Entremets tráng gương, Chocolate Showpiece, Tart nghệ thuật, Viennoiserie cán ngàn lớp và bánh mì artisan men tự nhiên.",
+        sk2_title: "Menu Concept Development",
+        sk2_desc: "Nghiên cứu thị trường và sáng tạo thực đơn tráng miệng theo mùa, tiệc trà chiều thượng hạng (Afternoon Tea), buffet món ngọt và sự kiện khánh tiết cao cấp.",
+        sk3_title: "Cost Control & Food Waste",
+        sk3_desc: "Kỹ năng phân tích chi phí món ăn chính xác (Food Costing), quản lý nguyên liệu tồn kho theo nguyên tắc FIFO, giảm thiểu tối đa hao hụt và nâng cao biên lợi nhuận F&B.",
+        sk4_title: "Tiêu Chuẩn 5 Sao & HACCP",
+        sk4_desc: "Tuân thủ nghiêm ngặt các quy chuẩn vệ sinh an toàn thực phẩm quốc tế, kiểm soát nhiệt độ lưu trữ và quy trình bảo quản bánh tươi mỗi ngày.",
+        sk5_title: "Ngoại Ngữ Quốc Tế",
+        sk5_desc: "<strong>Tiếng Anh:</strong> TOEIC 705 (Làm việc và giao tiếp trôi chảy với chuyên gia quốc tế). Hiểu biết thuật ngữ và giao tiếp tiếng Pháp chuyên ngành bánh ngọt.",
+        sk6_title: "Lãnh Đạo Đội Ngũ & Đào Tạo",
+        sk6_desc: "Khả năng dẫn dắt, truyền cảm hứng và đào tạo các thế hệ phụ bếp, đầu bếp bánh trẻ. Làm việc bình tĩnh và đạt hiệu suất cao dưới áp lực thời gian lớn.",
+        edu_subtitle: "Bằng cấp & Nền tảng",
+        edu_title: "Học Vấn & Nền Tảng Học Thuật",
+        edu_degree_type: "Cử Nhân",
+        edu_major: "Quản Trị Khách Sạn (Hotel Management)",
+        edu_desc: "Trang bị tư duy quản lý hiện đại kết hợp kiến thức vận hành khách sạn đa quốc gia, giúp kết nối trơn tru giữa nghệ thuật làm bánh và bài toán kinh doanh F&B hiệu quả.",
+        edu_lang_cert: "Chứng chỉ ngoại ngữ chuyên môn:",
+        interests_title: "Sở Thích & Nguồn Cảm Hứng",
+        int1: "Nghệ thuật ẩm thực đỉnh cao",
+        int2: "Sáng tạo bánh ngọt đương đại",
+        int3: "Âm nhạc nghệ thuật",
+        int4: "Du lịch trải nghiệm",
+        int5: "Tâm lý học hành vi thực khách",
+        contact_subtitle: "Liên hệ trực tiếp",
+        contact_title: "Thông Tin Liên Hệ",
+        contact_intro: "Tôi luôn sẵn sàng kết nối, chia sẻ niềm đam mê ẩm thực và thảo luận về các cơ hội hợp tác làm việc, tư vấn mở tiệm bánh, phát triển menu hoặc các sự kiện ẩm thực cao cấp.",
+        contact_name_lbl: "Họ và tên",
+        contact_dob: "Sinh ngày: 13/10/1993",
+        contact_phone_lbl: "Điện thoại / Zalo",
+        contact_email_lbl: "Email nhận thư",
+        contact_address_lbl: "Địa chỉ",
+        contact_address_val: "235/64 Nam Kỳ Khởi Nghĩa, Phường Võ Thị Sáu (Xuân Hòa), Quận 3, TP. Hồ Chí Minh",
+        contact_ref_lbl: "Người tham chiếu:",
+        contact_ref_val: "Cung cấp khi có yêu cầu (On request)",
+        form_subtitle: "Gửi tin nhắn trực tiếp",
+        form_title: "Gửi Email Cho Đức",
+        form_name_lbl: "Họ và tên của bạn",
+        form_email_lbl: "Email của bạn",
+        form_phone_lbl: "Số điện thoại",
+        form_purpose_lbl: "Mục đích liên hệ",
+        opt_job: "Cơ hội việc làm / Hợp tác dài hạn",
+        opt_consult: "Tư vấn menu / Mở tiệm bánh",
+        opt_event: "Đặt tiệc bánh sự kiện cao cấp",
+        opt_network: "Giao lưu ẩm thực / Khác",
+        form_msg_lbl: "Nội dung tin nhắn",
+        form_submit_btn: "Gửi Tin Nhắn Đến trinhngocduc1310@gmail.com",
+        footer_back_top: "Về đầu trang",
+        form_sending: "Đang gửi tin nhắn...",
+        form_success: "Cảm ơn bạn! Tin nhắn đã được gửi thành công đến trinhngocduc1310@gmail.com. Chef Đức sẽ phản hồi sớm nhất.",
+        form_error: "Có lỗi xảy ra khi gửi. Vui lòng thử lại hoặc gửi trực tiếp qua email: trinhngocduc1310@gmail.com"
+      },
+      en: {
+        nav_role: "Pastry Chef • Le Méridien Saigon",
+        nav_works: "Portfolio",
+        nav_experience: "Experience",
+        nav_skills: "Skills",
+        nav_education: "Education",
+        nav_contact: "Contact",
+        nav_get_in_touch: "Send Message",
+        hero_badge: "Pastry Chef • Marriott International",
+        hero_title: 'Culinary Pastry Art & <br><span class="text-gradient-gold">5-Star Luxury Excellence</span>',
+        hero_bio: 'Welcome to the executive portfolio of <strong>Trịnh Ngọc Đức</strong> — Pastry Chef at <em>Le Méridien Saigon Hotel</em>. Over 11 years of international hospitality experience leading pastry departments, crafting haute couture dessert concepts, and executing grand banquets at <strong>Marriott International</strong> and <strong>AccorHotels (MGallery)</strong>.',
+        hero_btn_works: "View Pastry Creations",
+        hero_btn_contact: "Get In Touch",
+        stat_exp: "Years Experience",
+        stat_hotel: "Luxury 5-Star",
+        stat_lang: "TOEIC 705 & French",
+        gallery_subtitle: "Signature Creations",
+        gallery_title: "Culinary & Pastry Art",
+        gallery_desc: "A refined fusion of French classical techniques, Indochine inspirations, and contemporary 5-star gastronomic aesthetics.",
+        art1_title: "Haute Couture Entremets",
+        art1_short: "Modern mirror glaze layered cakes featuring bespoke chocolate artisan tempering.",
+        art2_title: "Artisan Sourdough & Breads",
+        art2_short: "Wild yeast fermentation mastery crafting rustic European breads and crusty loaves.",
+        art3_title: "Afternoon Tea Collection",
+        art3_short: "Exquisite Petit Fours and seasonal tarts curated for 5-star luxury High Tea.",
+        art4_title: "French Viennoiserie",
+        art4_short: "Laminated golden croissants baked with 100% French premium butter.",
+        gallery_view_detail: "View creation",
+        exp_subtitle: "11-Year Professional Journey",
+        exp_title: "Career Experience",
+        exp1_date_desktop: "08/2023 – Present",
+        exp1_date_mobile: "08/2023 – Present",
+        exp1_badge: "Current Role",
+        exp1_desc: "Directing and managing the entire Pastry & Bakery department. Defining high-end dessert concepts, developing menus for fine-dining restaurants, international conferences, and VIP banquets.",
+        tag_exec: "Head of Pastry",
+        tag_menu: "Menu Development",
+        tag_cost: "Cost Control",
+        tag_haccp: "HACCP & Food Safety",
+        exp2_desc: "Spearheaded the pastry section with full operational responsibility as Pastry Chef. Maintained outstanding culinary benchmarks and tight food cost controls.",
+        exp3_desc: "Led the luxury boutique pastry section, innovating French classical desserts infused with Indochine charm.",
+        exp4_desc: "Managed daily shift operations, supervising high-tea confectionery, breakfast bakery, and upscale event buffets.",
+        exp5_period: "Foundational Years (2013 – 2017)",
+        exp5_title: "Culinary Foundations & Early Journey",
+        exp5_waiter: "Where genuine customer care and hospitality passion took root",
+        skills_subtitle: "Expertise & Competencies",
+        skills_title: "Comprehensive Skillset",
+        sk1_title: "Pastry & Bakery Art",
+        sk1_desc: "Expertise in European & French pastry: Mirror-glaze entremets, chocolate showpieces, artisan tarts, laminated viennoiserie, and sourdough.",
+        sk2_title: "Menu Concept Development",
+        sk2_desc: "Market trend research and seasonal dessert innovation for high tea, dessert buffets, and diplomatic banquet galas.",
+        sk3_title: "Cost Control & Food Waste",
+        sk3_desc: "Precise recipe food costing, FIFO inventory governance, waste minimization, and F&B profit margin optimization.",
+        sk4_title: "5-Star Standards & HACCP",
+        sk4_desc: "Rigorous adherence to international food safety regulations, temperature monitoring, and daily quality audits.",
+        sk5_title: "Multilingual Communication",
+        sk5_desc: "<strong>English:</strong> TOEIC 705 (Fluent in multicultural kitchen environments). Working knowledge of culinary French.",
+        sk6_title: "Kitchen Leadership & Mentorship",
+        sk6_desc: "Inspiring and developing junior pastry teams. Resilient, composed, and highly efficient under high-volume pressure.",
+        edu_subtitle: "Academic Foundations",
+        edu_title: "Education & Qualifications",
+        edu_degree_type: "Bachelor's Degree",
+        edu_major: "Hotel Management",
+        edu_desc: "Rooted in hospitality management and F&B strategic operations, bridging artistic pastry excellence with commercial success.",
+        edu_lang_cert: "Language Proficiency:",
+        interests_title: "Passions & Inspirations",
+        int1: "Haute Culinary Arts",
+        int2: "Contemporary Pastry Design",
+        int3: "Acoustic Music",
+        int4: "Global Cultural Travels",
+        int5: "Consumer Psychology",
+        contact_subtitle: "Direct Inquiries",
+        contact_title: "Contact Information",
+        contact_intro: "Available for executive culinary opportunities, pastry consultancy, bespoke menu creation, and masterclasses.",
+        contact_name_lbl: "Full Name",
+        contact_dob: "Birthdate: October 13, 1993",
+        contact_phone_lbl: "Phone / WhatsApp / Zalo",
+        contact_email_lbl: "Direct Email",
+        contact_address_lbl: "Location",
+        contact_address_val: "235/64 Nam Ky Khoi Nghia St., Vo Thi Sau Ward, District 3, Ho Chi Minh City, Vietnam",
+        contact_ref_lbl: "Referees:",
+        contact_ref_val: "Available upon request",
+        form_subtitle: "Send a direct message",
+        form_title: "Email Chef Duc",
+        form_name_lbl: "Your Full Name",
+        form_email_lbl: "Your Email Address",
+        form_phone_lbl: "Phone Number",
+        form_purpose_lbl: "Inquiry Purpose",
+        opt_job: "Job Opportunity / Executive Role",
+        opt_consult: "Pastry Consulting / Menu Design",
+        opt_event: "Private Event / Luxury Catering",
+        opt_network: "Culinary Networking / Other",
+        form_msg_lbl: "Your Message",
+        form_submit_btn: "Send Email to trinhngocduc1310@gmail.com",
+        footer_back_top: "Back to top",
+        form_sending: "Sending your message...",
+        form_success: "Thank you! Your message has been sent directly to trinhngocduc1310@gmail.com. Chef Duc will get back to you shortly.",
+        form_error: "There was an error sending your message. Please retry or email directly to trinhngocduc1310@gmail.com"
+      },
+      zh: {
+        nav_role: "點心行政主廚 • 西貢艾美酒店",
+        nav_works: "作品集",
+        nav_experience: "職業歷程",
+        nav_skills: "專業技能",
+        nav_education: "學歷背景",
+        nav_contact: "聯絡方式",
+        nav_get_in_touch: "發送郵件",
+        hero_badge: "Pastry Chef • 萬豪國際集團",
+        hero_title: '法式烘焙藝術與 <br><span class="text-gradient-gold">五星級奢華美味</span>',
+        hero_bio: '歡迎瀏覽 <strong>鄭玉德 (Trịnh Ngọc Đức)</strong> 的主廚作品集 — 現任 <em>西貢艾美酒店 (Le Méridien Saigon)</em> 點心主廚。擁有超過11年於國際頂級五星級酒店（<strong>萬豪國際集團</strong> 與 <strong>雅高酒店集團美憬閣</strong>）管理烘焙部門、研發高級甜點與統籌大型國宴的深厚資歷。',
+        hero_btn_works: "欣賞烘焙作品",
+        hero_btn_contact: "聯絡主廚",
+        stat_exp: "年專業資歷",
+        stat_hotel: "國際五星級酒店",
+        stat_lang: "多益705分 & 法語",
+        gallery_subtitle: "代表性創作",
+        gallery_title: "甜點與烘焙藝術",
+        gallery_desc: "融合經典法式工藝、印度支那美學與當代五星級精緻飲食體驗。",
+        art1_title: "高級訂製法式慕斯蛋糕",
+        art1_short: "當代鏡面淋面蛋糕，嚴格遵循法式巧克力調溫工藝。",
+        art2_title: "天然酵母酸種麵包",
+        art2_short: "長時間自然發酵技術，打造酥脆外皮與氣孔完美的歐式麵包。",
+        art3_title: "五星級英式下午茶系列",
+        art3_short: "專為奢華下午茶量身打造的精緻一口甜點 (Petit Fours) 與季節果塔。",
+        art4_title: "法式千層可頌烘焙",
+        art4_short: "極致蜂巢組織千層可頌，使用100%法國進口優質奶油烘烤。",
+        gallery_view_detail: "查看創作細節",
+        exp_subtitle: "十一年匠心淬鍊",
+        exp_title: "職業經歷與生涯",
+        exp1_date_desktop: "2023年08月 – 至今",
+        exp1_date_mobile: "2023年08月 – 至今",
+        exp1_badge: "現任職位",
+        exp1_desc: "全面統籌與領導西點烘焙部門 (Pastry & Bakery)。負責高級餐廳甜點概念策劃、菜單研發、國際會議茶歇與VIP盛宴製作。",
+        tag_exec: "主廚營運統籌",
+        tag_menu: "菜單研發策劃",
+        tag_cost: "成本控制管理",
+        tag_haccp: "HACCP食品安全",
+        exp2_desc: "以西點副主廚身份全權代理點心主廚之職責 (in charge of full pastry section as Pastry Chef)。確保出品卓越並嚴格控管食材耗損。",
+        exp3_desc: "掌管精品酒店西點台，將經典法式西點與法屬東方典雅風韻完美融合。",
+        exp4_desc: "管理班次日常運作，負責奢華下午茶、精緻早餐烘焙與大型宴會甜品供應。",
+        exp5_period: "夯實基礎階段 (2013 – 2017)",
+        exp5_title: "職業基石與烘焙啟航",
+        exp5_waiter: "從基層餐飲服務體悟以客為尊的初心",
+        skills_subtitle: "核心專長與優勢",
+        skills_title: "全面性專業技能",
+        sk1_title: "法式西點與烘焙工藝",
+        sk1_desc: "精通歐陸與法式甜點：鏡面慕斯、巧克力飾品造型、法式水果塔、千層可頌與天然酵母酸種歐包。",
+        sk2_title: "甜點菜單概念研發",
+        sk2_desc: "市場潮流分析與當季概念菜單研發，涵蓋高級下午茶、甜點自助餐及國賓級宴會。",
+        sk3_title: "食品成本控制與耗損管理",
+        sk3_desc: "精確計算每道甜點之食材成本 (Food Costing)，遵循FIFO先進先出庫存管理，最大化餐飲利潤率。",
+        sk4_title: "五星級標準與HACCP認證",
+        sk4_desc: "嚴格遵守國際食品衛生安全法規，嚴控儲存溫濕度，確保每日現烤品質無瑕。",
+        sk5_title: "國際多語溝通能力",
+        sk5_desc: "<strong>英語：</strong> TOEIC 705分（於多國籍主廚團隊中流利協作）。具備專業法語烘焙術語基礎。",
+        sk6_title: "團隊領導與廚藝培訓",
+        sk6_desc: "具備卓越的團隊激勵與青年烘焙師培訓能力。在高強度宴會節奏下保持沉著冷靜且高效。",
+        edu_subtitle: "學術背景與資質",
+        edu_title: "學歷背景與專業證照",
+        edu_degree_type: "學士學位",
+        edu_major: "酒店管理 (Hotel Management)",
+        edu_desc: "具備現代酒店營運與餐飲經營思維，完美串連甜點藝術美感與商業獲利模式。",
+        edu_lang_cert: "語言能力證照：",
+        interests_title: "靈感源泉與個人愛好",
+        int1: "頂級精緻料理藝術",
+        int2: "現代甜點創新設計",
+        int3: "藝文與舒緩音樂",
+        int4: "全球深度文化旅行",
+        int5: "顧客消費心理學",
+        contact_subtitle: "即時聯絡",
+        contact_title: "聯絡資訊",
+        contact_intro: "隨時歡迎交流烘焙熱忱，洽談主廚職務、烘焙坊籌備顧問、客製菜單研發或精品品牌合作。",
+        contact_name_lbl: "姓名",
+        contact_dob: "出生日期：1993年10月13日",
+        contact_phone_lbl: "電話 / Zalo / 微信",
+        contact_email_lbl: "收信電子郵件",
+        contact_address_lbl: "居住地址",
+        contact_address_val: "胡志明市第三郡武氏六坊（春和坊）南圻起義街235/64號",
+        contact_ref_lbl: "推薦人資訊：",
+        contact_ref_val: "可依要求提供 (On request)",
+        form_subtitle: "直接填寫發送信件",
+        form_title: "發送電子郵件給主廚",
+        form_name_lbl: "您的姓名",
+        form_email_lbl: "您的電子郵件",
+        form_phone_lbl: "聯絡電話",
+        form_purpose_lbl: "諮詢或洽談目的",
+        opt_job: "工作機會 / 主廚職位洽談",
+        opt_consult: "烘焙顧問 / 菜單研發合作",
+        opt_event: "高端私人宴會甜點預訂",
+        opt_network: "廚藝交流 / 其他事項",
+        form_msg_lbl: "留言內容",
+        form_submit_btn: "發送郵件至 trinhngocduc1310@gmail.com",
+        footer_back_top: "回到頂部",
+        form_sending: "信件發送中...",
+        form_success: "感謝您的來信！訊息已直接發送至 trinhngocduc1310@gmail.com，主廚將盡速親自回覆。",
+        form_error: "發送過程中發生問題，請重試或直接寄信至：trinhngocduc1310@gmail.com"
+      }
+    };
+
+    // Current language state (default: Vietnamese)
+    let currentLang = 'vi';
+
+    function setLanguage(lang) {
+      if (!translations[lang]) return;
+      currentLang = lang;
+
+      // Update button active styles (Desktop)
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active', 'text-brand-dark', 'bg-brand-gold', 'font-bold');
+        btn.classList.add('text-slate-400');
+      });
+      const activeBtn = document.getElementById(`btn-${lang}`);
+      const activeMobileBtn = document.getElementById(`m-btn-${lang}`);
+      if (activeBtn) {
+        activeBtn.classList.add('active', 'text-brand-dark', 'bg-brand-gold', 'font-bold');
+        activeBtn.classList.remove('text-slate-400');
+      }
+      if (activeMobileBtn) {
+        activeMobileBtn.classList.add('active', 'text-brand-dark', 'bg-brand-gold', 'font-bold');
+        activeMobileBtn.classList.remove('text-slate-400');
+      }
+
+      // Update HTML lang attribute
+      document.documentElement.lang = lang === 'zh' ? 'zh-TW' : lang;
+
+      // Apply translations to all DOM elements with data-i18n
+      const dict = translations[lang];
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (dict[key]) {
+          el.innerHTML = dict[key];
+        }
+      });
+
+      // Update place-holders in form
+      const nameInput = document.getElementById('sender-name');
+      const msgInput = document.getElementById('sender-message');
+      if (lang === 'vi') {
+        nameInput.placeholder = 'Nguyễn Văn A';
+        msgInput.placeholder = 'Xin chào Chef Đức, tôi muốn trao đổi về...';
+      } else if (lang === 'en') {
+        nameInput.placeholder = 'John Doe';
+        msgInput.placeholder = 'Dear Chef Duc, I would like to inquire about...';
+      } else if (lang === 'zh') {
+        nameInput.placeholder = '王大明';
+        msgInput.placeholder = '鄭主廚您好，我想諮詢關於...';
+      }
+    }
+
+    // Modal Details for Artworks (Multilingual)
+    const galleryItems = [
+      {
+        img: 'assets/images/pastry-signature-1.jpg',
+        title: {
+          vi: 'Haute Couture Entremets',
+          en: 'Haute Couture Entremets',
+          zh: '高級訂製法式慕斯蛋糕'
+        },
+        desc: {
+          vi: 'Bánh kem tầng nghệ thuật đương đại, kỹ thuật tráng gương (Mirror Glaze) hoàn mỹ kết hợp cốt bánh đa tầng thanh tao và nghệ thuật tạo hình sô-cô-la cao cấp.',
+          en: 'Contemporary layered mousse cake featuring flawless mirror glaze technique, balanced multi-textured layers, and bespoke chocolate artisan tempering.',
+          zh: '當代精緻多層次慕斯蛋糕，完美鏡面淋面技藝，巧妙結合多重風味口感與頂級法式調溫巧克力造型。'
+        }
+      },
+      {
+        img: 'assets/images/pastry-signature-2.jpg',
+        title: {
+          vi: 'Artisan Bakery & Sourdough',
+          en: 'Artisan Bakery & Sourdough',
+          zh: '天然酵母酸種歐式麵包'
+        },
+        desc: {
+          vi: 'Kỹ thuật lên men tự nhiên dài ngày, tạo nên lớp vỏ bánh giòn tan chuẩn châu Âu và kết cấu ruột bánh mềm xốp thượng hạng.',
+          en: 'Long-cold fermentation wild yeast technique creating an authentic European crispy crust and open, airy crumb structure.',
+          zh: '採用長時間自然低溫發酵技術，培育天然野生酵母，烘烤出外脆內軟、麥香濃郁的頂級歐式手工麵包。'
+        }
+      },
+      {
+        img: 'assets/images/pastry-signature-3.jpg',
+        title: {
+          vi: '5-Star Afternoon Tea Collection',
+          en: '5-Star Afternoon Tea Collection',
+          zh: '五星級奢華英式下午茶系列'
+        },
+        desc: {
+          vi: 'Bộ sưu tập bánh nhỏ tinh xảo (Petit Fours, Tartelettes, Macarons) dành riêng cho tiệc trà chiều hoàng gia tại các khách sạn sang trọng.',
+          en: 'A delicate collection of Petit Fours, modern tarts, and macarons designed specifically for luxury high tea experiences.',
+          zh: '專為五星級酒店貴賓下午茶精選設計之精緻一口甜點 (Petit Fours)、法式水果塔與馬卡龍系列。'
+        }
+      },
+      {
+        img: 'assets/images/pastry-signature-4.jpg',
+        title: {
+          vi: 'Viennoiserie & Croissant Mastery',
+          en: 'Viennoiserie & Croissant Mastery',
+          zh: '極致法式千層可頌烘焙'
+        },
+        desc: {
+          vi: 'Kỹ thuật cán ngàn lớp (Lamination) đạt độ nở hoàn mỹ, sử dụng 100% bơ nhập khẩu từ Pháp cho hương thơm ngậy tinh tế.',
+          en: 'Precision lamination technique achieving a perfect honeycomb interior, baked with 100% imported French butter.',
+          zh: '極致千層折疊工藝 (Lamination)，呈現完美的內部蜂巢組織，純天然法國進口奶油散發優雅迷人香氣。'
+        }
+      }
+    ];
+
+    function showGalleryModal(index) {
+      const item = galleryItems[index];
+      if (!item) return;
+      const modal = document.getElementById('image-modal');
+      const modalImg = document.getElementById('modal-img');
+      const modalTitle = document.getElementById('modal-title');
+      const modalDesc = document.getElementById('modal-desc');
+
+      modalImg.src = item.img;
+      modalTitle.textContent = item.title[currentLang] || item.title.vi;
+      modalDesc.textContent = item.desc[currentLang] || item.desc.vi;
+
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      modal.classList.add('opacity-100');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('image-modal');
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      modal.classList.remove('opacity-100');
+      document.body.style.overflow = 'auto';
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+
+    // Mobile nav toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // AJAX Form Handling with Formspree
+    const form = document.getElementById('portfolio-form');
+    const statusDiv = document.getElementById('form-status');
+    const submitBtn = document.getElementById('submit-btn');
+    const btnText = document.getElementById('btn-text');
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      // UI Sending State
+      submitBtn.disabled = true;
+      submitBtn.classList.add('opacity-70');
+      btnText.textContent = translations[currentLang].form_sending;
+      statusDiv.className = 'hidden';
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          statusDiv.className = 'mt-4 p-4 rounded-xl text-center text-sm font-medium bg-emerald-500/20 border border-emerald-500/40 text-emerald-300';
+          statusDiv.textContent = translations[currentLang].form_success;
+          form.reset();
+        } else {
+          throw new Error('Formspree returned non-200');
+        }
+      } catch (error) {
+        statusDiv.className = 'mt-4 p-4 rounded-xl text-center text-sm font-medium bg-rose-500/20 border border-rose-500/40 text-rose-300';
+        statusDiv.textContent = translations[currentLang].form_error;
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('opacity-70');
+        btnText.textContent = translations[currentLang].form_submit_btn;
+      }
+    });
+  </script>
+</body>
+</html>
